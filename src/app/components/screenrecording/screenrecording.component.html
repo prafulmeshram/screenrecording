@@ -1,0 +1,12 @@
+<div style="text-align: center;">
+    <video *ngIf="hasVideo" #recordVideo style="width: 100%;" controls></video>
+    <button id="start" class="start" (click)="recordStart()" [disabled]="isRecording">
+        Start Recording
+    </button>
+    <button id="stop" class="stop" (click)="recordStop()" [disabled]="!isRecording">
+        Stop Recording
+    </button>
+    <button id="stop" (click)="downloadBlob()" *ngIf="hasVideo">
+        Download Recording
+    </button>
+</div>
